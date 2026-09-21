@@ -1,0 +1,34 @@
+# Illustrative Claude Code review workflow.
+# The action reference and its input names below are placeholders: check the
+# 'Code review & CI/CD' section of the Claude Code docs for the current action
+# and inputs before committing this file to .github/workflows/.
+
+name: Claude review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read        # read-only checkout
+  pull-requests: write  # needed to post review comments
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the pull request
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude Code review
+        # ILLUSTRATIVE: replace with the action and version from the docs.
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Use the pr-review skill. Review this pull request against CLAUDE.md.
+            Comment only. Do not approve, merge, commit or push.
+          # ILLUSTRATIVE input name: restrict the agent to read-only tools.
+          allowed_tools: 'Read,Grep,Glob'
