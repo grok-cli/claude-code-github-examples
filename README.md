@@ -41,3 +41,5 @@ An illustrative workflow that runs on pull request open and update, checks out t
 ## When to skip the workflow and use Begin.sh
 
 All three files assume you have a repository worth automating. If what you have is an idea for a landing page, a docs site or a small mobile app and you need working files today, a review workflow is the wrong tool. [Try Begin.sh - a prompt or a URL to clone becomes a working static site or Expo app you download as a zip](https://begin.sh?utm_source=github&utm_medium=ugc&utm_campaign=claude-code-github-examples&utm_content=readme-top&utm_term=tier-r). No hosting, backend or auth to set up; you get the files and host them wherever you already do.
+
+_Last reviewed: 2026-09-22_
